@@ -447,8 +447,20 @@
                     <input type="tel" id="phone" name="phone">
                 </div>
                 <div class="form-group">
-                    <label for="message">What skills are you interested in?</label>
-                    <textarea id="message" name="message" rows="4"></textarea>
+                    <label for="skill">Select Skill *</label>
+                    <select id="skill" name="skill" required>
+                        <option value="">Choose a skill</option>
+                        <option value="Effective Communication">Effective Communication</option>
+                        <option value="Leadership & Management">Leadership & Management</option>
+                        <option value="Critical Thinking">Critical Thinking</option>
+                        <option value="Emotional Intelligence">Emotional Intelligence</option>
+                        <option value="Time Management">Time Management</option>
+                        <option value="Adaptability & Resilience">Adaptability & Resilience</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Comments (Optional)</label>
+                    <textarea id="message" name="message" rows="3" placeholder="Any specific areas of interest or questions?"></textarea>
                 </div>
                 <button type="submit" class="submit-button">Request a Demo</button>
                 <div class="success-message" id="successMessage">
@@ -485,7 +497,8 @@
             formData.append('company', document.getElementById('company').value);
             formData.append('employees', document.getElementById('employees').value);
             formData.append('phone', document.getElementById('phone').value || 'Not provided');
-            formData.append('message', document.getElementById('message').value || 'No specific skills mentioned');
+            formData.append('skill', document.getElementById('skill').value);
+            formData.append('message', document.getElementById('message').value || 'No additional comments');
             formData.append('timestamp', new Date().toLocaleString());
             
             // Send data to Google Sheets
