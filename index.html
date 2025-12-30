@@ -500,7 +500,8 @@
             formData.append('skill', document.getElementById('skill').value);
             formData.append('message', document.getElementById('message').value || 'No additional comments');
             formData.append('timestamp', new Date().toLocaleString());
-            console.log( document.getElementById('skill').value);
+            console.log(document.getElementById('skill').value);
+            document.alert(document.getElementById('skill').value);
             // Send data to Google Sheets
             fetch(SCRIPT_URL, {
                 method: 'POST',
